@@ -17,7 +17,7 @@ function setMessage($message) {
 function displayMessage() {
 
 	if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
-		echo ("<div class='alert alert-danger w-50 text-center' role='alert' id='message'>");
+		echo ("<div class='alert alert-danger w-70 text-center' role='alert' id='message'>");
 		echo ($_SESSION['message']);
 		unset($_SESSION['message']);
 		echo ("</div>");
