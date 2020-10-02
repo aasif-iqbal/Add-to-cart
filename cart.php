@@ -19,9 +19,7 @@ if (isset($_GET['add'])) {
 			header("Location:checkout.php");
 		}
 	}
-} //else {
-// 	echo ("<h1>Not Set 1</h1>");
-// }
+}
 
 if (isset($_GET['remove'])) {
 
@@ -64,7 +62,6 @@ function display_cart() {
 	foreach ($_SESSION as $productInCart => $value) {
 
 		if ($value > 0) {
-			//$value = item_count
 
 			if (substr($productInCart, 0, 8) == "product_") {
 
@@ -101,7 +98,7 @@ function display_cart() {
 	</td>
 	<td>
 	<figcaption class="info">
-				<a href="#" class="title text-dark">{$row['product_name']}</a>
+				<a class="title text-dark">{$row['product_name']}</a>
 				<p class="text-muted small">Brand: {$brand_name} <br>
 				Size:{$row['product_size']} </p>
 			</figcaption>
@@ -150,6 +147,9 @@ DELIMETER;
 
 			}
 		}
+	}
+	if ($item_quantity == 0) {
+		echo ("<img src='image/empty_cart.png'>");
 	}
 }
 ?>

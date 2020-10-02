@@ -3,8 +3,7 @@ ob_start(); //output_buffer
 
 session_start();
 include 'database_connection.php';
-//include 'cart.php';
-//echo "function";
+
 function setMessage($message) {
 
 	if (!empty($message)) {
@@ -101,5 +100,4 @@ DELIMETER;
 		echo ($product);
 	}
 }
-
 ?>

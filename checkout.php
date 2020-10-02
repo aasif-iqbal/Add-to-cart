@@ -3,10 +3,20 @@ include "cdn.php";
 include "database_connection.php";
 include "nav.php";
 require_once 'cart.php';
-
 ?>
-<!-- http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/page-shopping-cart.html -->
+<style type="text/css">
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #fff
+	url('image/loader_image.gif') no-repeat center;
+	z-index: 99999;
+}
+</style>
+<body>
 <div class="container" style="margin-top: 100px;">
+	<div id="loader"></div>
 	<?php displayMessage();?>
 <div class="row">
 	<aside class="col-lg-9">
@@ -18,29 +28,12 @@ require_once 'cart.php';
 <table class="table table-borderless table-shopping-cart">
 <thead class="text-muted">
 <tr class="small text-uppercase">
-  <!-- <th scope="col">Product</th>
-  <th scope="col" width="120">Quantity</th>
-  <th scope="col" width="120">Price</th> -->
-  <!-- <th scope="col" class="text-right d-none d-md-block" width="200">Remove</th> -->
 </tr>
 </thead>
-
-
 	<?php display_cart();?>
-
-
-
 </table>
-<!-- <h2 class="text-center">No Product Found</h2> -->
 </div> <!-- table-responsive.// -->
-
-
-
 </div> <!-- card.// -->
-
-
-
-
 	</aside> <!-- col.// -->
 	<aside class="col-lg-3">
 
@@ -59,8 +52,6 @@ require_once 'cart.php';
 </form>
 </div> <!-- card-body.// -->
 </div> <!-- card.// -->
-<!-- <?php //total_price();?> -->
-
 <div class="card">
 <div class="card-body">
 	<p class="text-muted"><strong><small>PRICE DETAILS(<?php
@@ -84,7 +75,7 @@ echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION[
 		<p class="text-center mb-3">
 			<img src="image/payments.png" height="26">
 		</p>
-		<a href="#" class="btn btn-primary btn-block"> Make Payment </a>
+		<a href="#" class="btn btn-info btn-block"> Make Payment </a>
 		<a href="#" class="btn btn-light btn-block">Continue Shopping</a>
 		<p class="text-center text-uppercase text-muted my-3"><small><i class="fa fa-shield" aria-hidden="true"></i>&nbsp;safe and secure payment</small></p>
 </div>
@@ -96,9 +87,14 @@ echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION[
 	</aside> <!-- col.// -->
 </div> <!-- row.// -->
 </div>
+</body>
 <script type="text/javascript">
 			//hide message after 3sec
 	    setTimeout(function() {
 	       document.getElementById("message").style.display = 'none';
 	    }, 4000);
+	    //for loader
+	    window.onload = function() {
+    document.getElementById('loader').style.display = "none";
+}
 </script>

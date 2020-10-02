@@ -1,6 +1,5 @@
 <?php
 include "cdn.php";
-//include "cart.php";
 ?>
 <style type="text/css">
 	/*cart*/
@@ -27,9 +26,10 @@ include "cdn.php";
 </style>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 	<div class="container">
-		<a class="navbar-brand logo-font" href="index.php" id="brand">
-			Logo
+		<a class="navbar-brand" href="index.php">
+			<img src="image/pinnacle-cart.png" width="150" height="50">
 		</a>
+
 		<!-- links toggle -->
 		<button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#links" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 			<i class="fa fa-bars"></i>
@@ -59,14 +59,13 @@ include "cdn.php";
 				</div>
 				<div class="collapse navbar-collapse" id="account">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="" style="">
+						<li class="nav-item"><a class="nav-link" href="checkout.php" style="">
 							<span>
 								<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-handbag" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 									<path fill-rule="evenodd" d="M8 1a2 2 0 0 0-2 2v2h4V3a2 2 0 0 0-2-2zm3 4V3a3 3 0 1 0-6 0v2H3.361a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.356a2.5 2.5 0 0 0 2.472-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 0 0 1 0V6h4z"/>
 								</svg>
 								<span style="vertical-align: top;" class='badge' id='lblCartCount'><?php
-echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0";
-//header('Location:index.php');         ?></span>
+echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0"; ?></span>
 							</span>
 						</a></li>
 
@@ -79,5 +78,3 @@ echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION[
 				</div>
 			</div>
 		</nav>
-
-<script type="text/javascript"></script>
